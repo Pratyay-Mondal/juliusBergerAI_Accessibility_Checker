@@ -1,16 +1,31 @@
-# React + Vite
+# Julius Berger AI Accessibility Checker (Proof of Concept)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a Proof of Concept (POC) for an AI-assisted tool designed to check building designs against accessibility standards like **DIN 18040** and **ASR Workplace Directives**.
 
-Currently, two official plugins are available:
+## Current State of the POC
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Please note the following technical details about the current implementation:
 
-## React Compiler
+- **Mock Data:** This current version does **not** use a live AI API, local LLM, or any programmatic rule-based logic. 
+- **Purpose:** It relies entirely on hardcoded mock JSON data. This was a deliberate choice to ensure a stable, reliable, and fast demonstration of the user interface and workflow during a time-constrained hackathon.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Future Architecture & Roadmap
 
-## Expanding the ESLint configuration
+The ultimate goal of this tool is to integrate seamlessly into modern construction planning workflows. 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. BIM Integration
+The future work of this tool is to integrate directly into Julius Berger's existing **BIM (Building Information Modeling)** workflows. Instead of relying on 2D image analysis, the tool will programmatically analyze 3D models by reading raw geometry and metadata from **.ifc files**.
+
+### 2. Local LLM / AI Integration
+To power the actual compliance analysis engine, we plan to implement LLM vision and reasoning capabilities (such as Llama via Ollama, or compliant implementations of GPT/Gemini). 
+
+**Data Privacy (Datenschutz):** 
+Because of strict German **Datenschutz** (Data Protection) laws, we cannot send proprietary and highly confidential Julius Berger company data (such as internal floor plans and blueprints) to US-based remote servers. Therefore, the future architecture strongly prioritizes running **Local LLMs** (e.g., via Ollama) hosted securely within the company's own infrastructure to ensure 100% data sovereignty.
+
+---
+
+## Running the Application Locally
+
+1. `npm install`
+2. `npm run dev`
+3. Open `http://localhost:5173` (or the port specified in your terminal)
