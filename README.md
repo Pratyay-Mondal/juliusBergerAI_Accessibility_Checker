@@ -29,3 +29,9 @@ Because of strict German **Datenschutz** (Data Protection) laws, we cannot send 
 1. `npm install`
 2. `npm run dev`
 3. Open `http://localhost:5173` (or the port specified in your terminal)
+
+
+### Screenshot
+<img width="1661" height="949" alt="Screenshot 2026-06-19 at 10 06 34 AM" src="https://github.com/user-attachments/assets/fd6fbb57-d8ac-4e38-a235-3a38df3902ed" />
+
+
